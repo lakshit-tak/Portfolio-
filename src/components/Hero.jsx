@@ -1,8 +1,17 @@
+import { useEffect } from "react";
+
 function Hero() {
 
-    if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual"
-}
+    useEffect(() => {
+
+        if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual"
+
+        }
+    },[]);
+
+    
+
 
     return (
         <section className="hero" id="home">
@@ -66,6 +75,7 @@ function Hero() {
 
         </section>
     );
+
 }
 
 export default Hero;
